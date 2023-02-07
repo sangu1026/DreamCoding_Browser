@@ -1,0 +1,134 @@
+<!-- <!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        body{
+            background-color: black;
+        }
+        .pink{
+            background-color: pink;
+            height: 100px;
+            width:100px;
+            margin-bottom: 10px;
+            
+        }
+        #orange{
+            background-color: orange;
+            height: 100px;
+            width:100px;
+            margin-bottom: 10px;
+        }
+    </style>
+</head>
+<body>
+    <div class="pink"></div>
+    <div class="pink"></div>
+    <div class="pink"></div>
+    <div class="pink"></div>
+    <div class="pink"></div>
+    <div class="pink"></div>
+    <div class="pink"></div>
+    <div class="pink"></div>
+    <div class="pink"></div>
+    <div id="orange">
+    </div>
+    <div class="pink"></div>
+
+    <script>
+     document.addEventListener('click', function (event) {
+  var x = event.pageX;
+  var y = event.pageY;
+  var cx =event.clientX;
+  var cy= event.clientY;
+  let element = document.getElementById("orange");
+let rect = element.getBoundingClientRect();
+console.log(rect);
+
+  console.log(`client: ${cx}, ${cy}`);
+  console.log(`page: ${x}, ${y}`);
+});
+
+    </script>
+</body>
+</html> -->
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        body{
+            background-color: black;
+        }
+        #colorbox{
+            background-color: pink;
+            height: 100px;
+            width:100px;
+            margin-bottom: 10px;
+            
+        }
+        .orange{
+            background-color: orange;
+            height: 100px;
+            width:100px;
+            margin-bottom: 10px;
+        }
+        .button{
+            display:flex;
+            position: fixed;
+            right:0;
+        }
+        .scrollButton{
+            padding:25px 50px;
+            border-radius: 10px;
+        }
+    </style>
+</head>
+<body>
+    <div class="button">
+        <button  class="scrollButton scrollBy100">scroll by 100px(y)</button>
+        <button class="scrollButton scrollTo100">scroll to 100px(y)</button>
+        <button class="scrollButton scrollOrange">scroll into special</button>
+        
+    </div>
+
+    <div id="colorbox" ></div>
+    <div  id="colorbox"></div>
+    <div  id="colorbox"></div>
+    <div  id="colorbox"></div>
+    <div  id="colorbox"></div>
+    <div  id="colorbox"></div>
+    <div  id="colorbox"></div>
+    <div  id="colorbox"></div>
+    <div  id="colorbox"></div>
+    <div  class="orange"></div>
+    <div  id="colorbox"></div>
+
+
+
+    <script>
+       const scrollBy100 =document.querySelector('.scrollBy100');
+       const scrollTo100 =document.querySelector('.scrollTo100');
+       const scrollOrange =document.querySelector('.scrollOrange');
+       const orange =document.querySelector('.orange');
+
+       scrollBy100.addEventListener('click',event =>{
+        window.scrollBy(0,20);
+       });
+       scrollTo100.addEventListener('click',event =>{
+        window.scrollTo(0,100);
+       });
+       scrollOrange.addEventListener('click',event=>{
+        orange.scrollIntoView();
+       });
+
+    </script>
+</body>
+</html>
